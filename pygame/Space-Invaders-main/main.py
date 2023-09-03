@@ -11,7 +11,7 @@ def run():
 
     class Player:
         #Player attributes
-        player_img = pygame.image.load("spaceship.png")
+        player_img = pygame.image.load("images/spaceship.png")
         player_pos = [900,800]
         player_change = [0,0]
         player_speed = 10
@@ -29,7 +29,7 @@ def run():
         game_done = False
 
         #Bullet attributes
-        bullet_img = pygame.image.load("bullet.png")
+        bullet_img = pygame.image.load("images/bullet.png")
         bullet_pos = [0,800]
         bullet_change = [0,0]
         bullet_speed = 20
@@ -114,8 +114,8 @@ def run():
 
         def health(self):
             # Draw hearts
-            img_health = pygame.image.load("heart .png")
-            img_no_health = pygame.image.load("black_heart .png")
+            img_health = pygame.image.load("images/heart .png")
+            img_no_health = pygame.image.load("images/black_heart .png")
             health_pos = [(130,975),(90,975),(50,975)]
             for i in Player.player_health.keys():
                 if Player.player_health[i] == True:
@@ -230,7 +230,7 @@ def run():
 
     class FirstLevel:
         num = 20
-        enemyimg = [pygame.image.load("alien.png") for _ in range(num)]
+        enemyimg = [pygame.image.load("images/alien.png") for _ in range(num)]
         enemyx = [random.randint(1000,1800) for _ in range(num)]
         enemyy = [random.randint(20,350) for _ in range(num)]
         enemyx_change = [6.5 for _ in range(num)]
@@ -285,8 +285,8 @@ def run():
                     FirstLevel.draw_enemy(FirstLevel.enemyx[i],FirstLevel.enemyy[i],i)
 
     class SecondLevel:
-        enemyimgs = [pygame.image.load("monster.png"),pygame.image.load("monster2.png"),pygame.image.load("monster3.png"),pygame.image.load("monster4.png"),
-                    pygame.image.load("monster5.png")]
+        enemyimgs = [pygame.image.load("images/monster.png"),pygame.image.load("images/monster2.png"),pygame.image.load("images/monster3.png"),pygame.image.load("images/monster4.png"),
+                    pygame.image.load("images/monster5.png")]
         enemyx = [75,200,300,500,600]
         enemyy = [50,120,190,260,330]
         enemyx_change = [6 for _ in range(5)]
@@ -295,7 +295,7 @@ def run():
         enemy_state = [True for _ in range(5)]
         enemy_health = [3 for _ in range(5)]
 
-        bulletimgs = [pygame.image.load("level2bullet.png") for _ in range(5)]
+        bulletimgs = [pygame.image.load("images/slime.png") for _ in range(5)]
         bulletx = [i for i in enemyx]
         bullety = [50,50,50,50,50]
         bullety_change = [10 for _ in range(5)]
@@ -366,7 +366,7 @@ def run():
                         
     class EnemyBoss:
         # Boss Attributes
-        enemy_img = pygame.image.load("alienboss.png")
+        enemy_img = pygame.image.load("images/alienboss.png")
         enemy_pos = [600,-1000]
         enemy_speed = 4
         enemy_change = [enemy_speed,0]
@@ -401,8 +401,8 @@ def run():
 
         def health(self):
             # Show health
-            img_health = pygame.image.load("skull.png")
-            img_no_health = pygame.image.load("black_skull.png")
+            img_health = pygame.image.load("images/skull.png")
+            img_no_health = pygame.image.load("images/black_skull.png")
             health_pos = [(1400,975),(1440,975),(1480,975),(1520,975),(1560,975),(1600,975),(1640,975),(1680,975),(1720,975),(1760,975)]
             for i in boss.enemy_health.keys():
                 if boss.enemy_health[i]:
@@ -437,7 +437,7 @@ def run():
                 EnemyBoss.hitcount = 0        
 
     class FirstMechanic:
-        bullet_img = pygame.image.load("laser.png") 
+        bullet_img = pygame.image.load("images/laser.png") 
         bullet_pos = [[-1000,200],[-1000,200],[-1000,200],[-1000,200]]
         bullet_hitboxes = [pygame.rect.Rect(0,0,0,0) for _ in range(4)]
         bullet_speed = 15
@@ -486,7 +486,7 @@ def run():
                 FirstMechanic.bullet_fired = False
 
     class SecondMechanic:
-        bullet_img = pygame.image.load("boss1.png") 
+        bullet_img = pygame.image.load("images/boss1.png") 
         bullet_pos = [[-1000,200],[-1000,200],[-1000,200],[-1000,200]]
         bullet_hitboxes = [pygame.rect.Rect(0,0,0,0) for _ in range(4)]
         bullet_speed = 15
@@ -549,9 +549,9 @@ def run():
         # se - side enemy
         # me - main enemy
 
-        se_img = [pygame.image.load("boss3alien-b-left.png"), pygame.image.load("boss3alien-b-right.png")]
+        se_img = [pygame.image.load("images/boss3alien-b-left.png"), pygame.image.load("images/boss3alien-b-right.png")]
         se_pos = [[-150,860],[2030,770]]
-        se_bullet_img = pygame.image.load("laser-horizontal.png")
+        se_bullet_img = pygame.image.load("images/laser-horizontal.png")
         se_bullet_pos = [[110,885],[-47,795]]
         se_bullet_state = ["ready","ready"]
         se_bullet_fired = [False,False]
@@ -561,7 +561,7 @@ def run():
         se_selector = random.choice([0,1])
         se_bullet_hitboxes = [pygame.rect.Rect(0,0,0,0) for _ in range(2)]
 
-        me_img = pygame.image.load("boss3alien-a.png")
+        me_img = pygame.image.load("images/boss3alien-a.png")
         me_hitbox = [pygame.rect.Rect(0,0,0,0) for _ in range(6)]
         me_spawn_rand = (100,50)
         me_spawn_y = [0 for i in range(6)]
@@ -572,7 +572,7 @@ def run():
         me_state = [True for _ in range(6)]
         me_health = [[True,True] for _ in range(6)]
 
-        me_bullet_img = pygame.image.load("slime.png")
+        me_bullet_img = pygame.image.load("images/slime.png")
         me_bullet_pos = [[0,0] for _ in range(6)]
         me_bullet_speed = 10
         me_bullet_change = [0,0,0,0,0,0]
@@ -700,7 +700,7 @@ def run():
                         ThirdMechanic.me_bullet_fired[i] = False
         
         def health(self):
-            img_health = pygame.image.load("boss3alien-a-health.png")
+            img_health = pygame.image.load("images/boss3alien-a-health.png")
             health_pos = [(ThirdMechanic.me_pos[i][0]+13,ThirdMechanic.me_spawn_y[i] - 20) for i in range(6)]
             bullet_hit = player.bullet_hitbox()
 
@@ -721,10 +721,10 @@ def run():
     clock = pygame.time.Clock()
     screen = pygame.display.set_mode((1920, 1020))
     pygame.display.set_caption("Space Invaders")
-    icon = pygame.image.load("ufo1.png")
+    icon = pygame.image.load("images/ufo1.png")
     pygame.display.set_icon(icon)
 
-    bg = [pygame.image.load("background.jpg"),pygame.image.load("background1.jpg"),pygame.image.load("background2.jpg")]
+    bg = [pygame.image.load("images/background.jpg"),pygame.image.load("images/background1.jpg"),pygame.image.load("images/background2.jpg")]
     bg_y = -1080
 
     def draw_bg(level):

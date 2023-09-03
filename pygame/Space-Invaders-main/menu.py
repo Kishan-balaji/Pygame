@@ -6,9 +6,9 @@ def open_tutorial(window):
         window.destroy()
     root=Tk()
     root.title("Tutorials")
-    root.geometry("1360x720")
+    root.geometry("1280x720")
 
-    bg_image = PhotoImage(file="tutorialimg.png")
+    bg_image = PhotoImage(file="C:/Users/Kishan/programs/Space-Invaders-main/Space-Invaders-main/images/tutorialimg.png")
     bg = Label(root, image=bg_image)
     bg.place(x=0, y=0)
     
@@ -30,9 +30,9 @@ def main_menu(window):
 
     root = Tk()
     root.title("SPACE INVADERS")
-    root.geometry("1360x720")
+    root.geometry("1280x720")
 
-    bg_img=PhotoImage(file="monster.png")
+    bg_img=PhotoImage(file="C:/Users/Kishan/programs/Space-Invaders-main/Space-Invaders-main/images/bg.png")
     bg=Label(root,image=bg_img)
     bg.place(x=0,y=0)
 
@@ -47,3 +47,5 @@ def main_menu(window):
 
     root.mainloop()
 
+
+main_menu(0)
